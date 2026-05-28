@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 260" role="img" aria-label="World stage placeholder">
-  <rect width="420" height="260" fill="#eef4ff"/>
-  <circle cx="210" cy="108" r="70" fill="#ffffff" stroke="#2961db" stroke-width="10"/>
-  <path d="M142 108h136M210 38c28 34 28 106 0 140M210 38c-28 34-28 106 0 140" fill="none" stroke="#2961db" stroke-width="7"/>
-  <path d="M70 218h280" stroke="#111827" stroke-width="12" stroke-linecap="round"/>
-</svg>

@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 640" role="img" aria-label="Quality book placeholder">
-  <rect width="520" height="640" fill="#eef4ff"/>
-  <rect x="132" y="74" width="256" height="492" rx="10" fill="#2961db"/>
-  <rect x="160" y="118" width="200" height="356" rx="4" fill="#ffffff"/>
-  <text x="260" y="185" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" font-weight="700" fill="#2961db">QUALITY</text>
-  <text x="260" y="235" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#5f6b7a">Zen and maintenance</text>
-  <path d="M190 356h140M190 392h140M190 428h92" stroke="#2961db" stroke-width="10" stroke-linecap="round"/>
-</svg>

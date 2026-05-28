@@ -56,6 +56,14 @@ if (!fs.existsSync(assetsDir)) {
   fail("Missing deck/assets");
 }
 
+for (const entry of fs.readdirSync(assetsDir, { withFileTypes: true })) {
+  if (!entry.isFile()) continue;
+  if (!/\.(svg|png|jpe?g|webp)$/i.test(entry.name)) continue;
+  if (!/^\d{2}_/.test(entry.name)) {
+    fail(`Root deck asset should start with a slide number prefix: ${entry.name}`);
+  }
+}
+
 const slides = html.match(/<section/g) || [];
 if (slides.length !== 7) {
   fail(`Expected 7 reveal slides, found ${slides.length}`);
@@ -83,6 +91,17 @@ if (imageRefs.length < 8) {
   fail(`Expected at least 8 local deck asset references, found ${imageRefs.length}`);
 }
 
+const slideHtml = [...html.matchAll(/<section\b[\s\S]*?<\/section>/g)].map((match) => match[0]);
+for (const [index, slide] of slideHtml.entries()) {
+  const expectedPrefix = `${String(index + 1).padStart(2, "0")}_`;
+  const slideImageRefs = [...slide.matchAll(/src="assets\/([^"]+)"/g)].map((match) => match[1]);
+  for (const asset of slideImageRefs) {
+    if (!asset.startsWith(expectedPrefix)) {
+      fail(`Slide ${index + 1} asset should start with ${expectedPrefix}: ${asset}`);
+    }
+  }
+}
+
 for (const asset of imageRefs) {
   if (!/\.(svg|png|jpe?g|webp)$/i.test(asset)) {
     fail(`Unsupported image asset extension: ${asset}`);
@@ -93,7 +112,7 @@ for (const asset of imageRefs) {
   }
 }
 
-for (const asset of ["personal_photo.JPG", "running_robot.jpg", "codex_keypad.jpg", "meme.png", "campervan.jpg", "book.jpg"]) {
+for (const asset of ["01_personal-photo.JPG", "02_running-robot.jpg", "02_codex-keypad.jpg", "05_meme.png", "03_campervan.jpg", "04_book.jpg"]) {
   if (!imageRefs.includes(asset)) fail(`deck/index.html should reference ${asset}`);
 }
 
