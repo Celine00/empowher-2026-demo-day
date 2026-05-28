@@ -42,7 +42,7 @@ body {
 .reveal .slides section,
 .reveal .slides section > .slide-shell {
   width: 1600px;
-  height: 900px;
+  height: 850px;
 }
 
 .reveal .slide-shell {
@@ -540,7 +540,7 @@ blockquote {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 18px;
-  margin: 34px 0 24px;
+  margin: 40px 0 50px;
 }
 
 .magic-era {
@@ -580,7 +580,7 @@ blockquote {
 
 .practitioner-note {
   margin-top: 18px;
-  padding-left: 22px;
+  padding-left: 30px;
   border-left: 4px solid var(--blue);
 }
 
