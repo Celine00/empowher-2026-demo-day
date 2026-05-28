@@ -115,7 +115,7 @@ for (const asset of imageRefs) {
   }
 }
 
-for (const asset of ["01_personal-photo.JPG", "02_running-robot.jpg", "02_codex-keypad.jpg", "05_meme.png", "03_campervan.jpg", "04_book.jpg"]) {
+for (const asset of ["01_personal-photo.JPG", "02_running-robot.jpg", "02_codex-keypad.jpg", "05_meme.jpg", "03_campervan.jpg", "04_book.jpg"]) {
   if (!imageRefs.includes(asset)) fail(`deck/index.html should reference ${asset}`);
 }
 
