@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" role="img" aria-label="Anxiety laptop placeholder">
-  <rect width="640" height="420" fill="#fff7f5"/>
-  <rect x="185" y="210" width="270" height="140" rx="12" fill="#111827"/>
-  <rect x="210" y="232" width="220" height="82" rx="4" fill="#2961db"/>
-  <circle cx="320" cy="145" r="54" fill="#e2644f"/>
-  <path d="M250 205c25-28 115-28 140 0" fill="#e2644f"/>
-  <path d="M120 100l42 28M505 105l-38 31M185 62l22 46M448 58l-20 48" stroke="#e2644f" stroke-width="10" stroke-linecap="round"/>
-  <text x="320" y="382" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#111827">AI news overload</text>
-</svg>

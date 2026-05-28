@@ -57,8 +57,8 @@ if (!fs.existsSync(assetsDir)) {
 }
 
 const slides = html.match(/<section/g) || [];
-if (slides.length !== 6) {
-  fail(`Expected 6 reveal slides, found ${slides.length}`);
+if (slides.length !== 7) {
+  fail(`Expected 7 reveal slides, found ${slides.length}`);
 }
 
 const requiredHtml = [
@@ -70,7 +70,8 @@ const requiredHtml = [
   "fragment",
   "data-fragment-index",
   "AI时代的感受力与良质",
-  "做时代的魔法师",
+  "效率之外，重建人与世界的真实连接",
+  "Thank you for listening!",
 ];
 
 for (const snippet of requiredHtml) {
@@ -83,13 +84,17 @@ if (imageRefs.length < 8) {
 }
 
 for (const asset of imageRefs) {
-  if (!/^\d{2}_[a-z0-9-]+\.(svg|png|jpg|jpeg|webp)$/.test(asset)) {
-    fail(`Asset name should use numeric prefix and underscore: ${asset}`);
+  if (!/\.(svg|png|jpe?g|webp)$/i.test(asset)) {
+    fail(`Unsupported image asset extension: ${asset}`);
   }
   const assetPath = path.join(assetsDir, asset);
   if (!fs.existsSync(assetPath)) {
     fail(`Missing referenced asset ${path.relative(root, assetPath)}`);
   }
+}
+
+for (const asset of ["personal_photo.JPG", "running_robot.jpg", "codex_keypad.jpg", "meme.png", "campervan.jpg", "book.jpg"]) {
+  if (!imageRefs.includes(asset)) fail(`deck/index.html should reference ${asset}`);
 }
 
 const remoteRefs = [
