@@ -59,14 +59,15 @@ if (!fs.existsSync(assetsDir)) {
 for (const entry of fs.readdirSync(assetsDir, { withFileTypes: true })) {
   if (!entry.isFile()) continue;
   if (!/\.(svg|png|jpe?g|webp)$/i.test(entry.name)) continue;
+  if (entry.name === "page1.png") continue;
   if (!/^\d{2}_/.test(entry.name)) {
     fail(`Root deck asset should start with a slide number prefix: ${entry.name}`);
   }
 }
 
 const slides = html.match(/<section/g) || [];
-if (slides.length !== 7) {
-  fail(`Expected 7 reveal slides, found ${slides.length}`);
+if (slides.length !== 8) {
+  fail(`Expected 8 reveal slides, found ${slides.length}`);
 }
 
 const requiredHtml = [
@@ -92,8 +93,10 @@ if (imageRefs.length < 8) {
 }
 
 const slideHtml = [...html.matchAll(/<section\b[\s\S]*?<\/section>/g)].map((match) => match[0]);
+const expectedAssetPrefixesBySlide = ["", "01_", "02_", "03_", "04_", "05_", "06_", ""];
 for (const [index, slide] of slideHtml.entries()) {
-  const expectedPrefix = `${String(index + 1).padStart(2, "0")}_`;
+  const expectedPrefix = expectedAssetPrefixesBySlide[index];
+  if (!expectedPrefix) continue;
   const slideImageRefs = [...slide.matchAll(/src="assets\/([^"]+)"/g)].map((match) => match[1]);
   for (const asset of slideImageRefs) {
     if (!asset.startsWith(expectedPrefix)) {
