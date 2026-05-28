@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 260" role="img" aria-label="Repair life placeholder">
+  <rect width="420" height="260" fill="#f7f9fd"/>
+  <path d="M94 166h190v52H94z" fill="#ffffff" stroke="#2961db" stroke-width="9"/>
+  <path d="M284 192h58c22 0 40-18 40-40s-18-40-40-40h-28" fill="none" stroke="#2961db" stroke-width="14" stroke-linecap="round"/>
+  <path d="M118 166V92h142v74" fill="#ffffff" stroke="#2961db" stroke-width="9"/>
+  <path d="M171 92V58h38v34" fill="none" stroke="#111827" stroke-width="10" stroke-linecap="round"/>
+  <path d="M76 58l50 50M126 58l-50 50" stroke="#e2644f" stroke-width="10" stroke-linecap="round"/>
+</svg>

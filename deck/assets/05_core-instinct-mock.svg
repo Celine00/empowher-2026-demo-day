@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 260" role="img" aria-label="Core instinct placeholder">
+  <rect width="420" height="260" fill="#f0fbf7"/>
+  <circle cx="210" cy="130" r="76" fill="#ffffff" stroke="#28a174" stroke-width="10"/>
+  <circle cx="210" cy="130" r="35" fill="#28a174"/>
+  <path d="M210 42v-24M210 242v-24M98 130H74M346 130h-24M131 51l15 22M289 51l-15 22M131 209l15-22M289 209l-15-22" stroke="#2961db" stroke-width="8" stroke-linecap="round"/>
+</svg>

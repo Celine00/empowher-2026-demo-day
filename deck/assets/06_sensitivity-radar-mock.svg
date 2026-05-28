@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 300" role="img" aria-label="Sensitivity radar placeholder">
-  <rect width="420" height="300" fill="#f0fbf7"/>
-  <circle cx="312" cy="76" r="42" fill="#ffd76a"/>
-  <path d="M0 224c92-50 159-63 235-30 76 34 127 22 185-18v124H0z" fill="#d8f3e9"/>
-  <circle cx="198" cy="126" r="38" fill="#28a174"/>
-  <path d="M126 242c18-62 58-92 72-92s54 30 72 92" fill="#ffffff"/>
-  <path d="M78 102c56-62 184-62 240 0M118 126c38-34 122-34 160 0" fill="none" stroke="#2961db" stroke-width="8" stroke-linecap="round"/>
-</svg>

@@ -56,9 +56,18 @@ if (!fs.existsSync(assetsDir)) {
   fail("Missing deck/assets");
 }
 
+for (const entry of fs.readdirSync(assetsDir, { withFileTypes: true })) {
+  if (!entry.isFile()) continue;
+  if (!/\.(svg|png|jpe?g|webp)$/i.test(entry.name)) continue;
+  if (entry.name === "page1.png") continue;
+  if (!/^\d{2}_/.test(entry.name)) {
+    fail(`Root deck asset should start with a slide number prefix: ${entry.name}`);
+  }
+}
+
 const slides = html.match(/<section/g) || [];
-if (slides.length !== 6) {
-  fail(`Expected 6 reveal slides, found ${slides.length}`);
+if (slides.length !== 8) {
+  fail(`Expected 8 reveal slides, found ${slides.length}`);
 }
 
 const requiredHtml = [
@@ -70,7 +79,8 @@ const requiredHtml = [
   "fragment",
   "data-fragment-index",
   "AI时代的感受力与良质",
-  "做时代的魔法师",
+  "效率之外，重建人与世界的真实连接",
+  "Thank you for listening!",
 ];
 
 for (const snippet of requiredHtml) {
@@ -82,14 +92,31 @@ if (imageRefs.length < 8) {
   fail(`Expected at least 8 local deck asset references, found ${imageRefs.length}`);
 }
 
+const slideHtml = [...html.matchAll(/<section\b[\s\S]*?<\/section>/g)].map((match) => match[0]);
+const expectedAssetPrefixesBySlide = ["", "01_", "02_", "03_", "04_", "05_", "06_", ""];
+for (const [index, slide] of slideHtml.entries()) {
+  const expectedPrefix = expectedAssetPrefixesBySlide[index];
+  if (!expectedPrefix) continue;
+  const slideImageRefs = [...slide.matchAll(/src="assets\/([^"]+)"/g)].map((match) => match[1]);
+  for (const asset of slideImageRefs) {
+    if (!asset.startsWith(expectedPrefix)) {
+      fail(`Slide ${index + 1} asset should start with ${expectedPrefix}: ${asset}`);
+    }
+  }
+}
+
 for (const asset of imageRefs) {
-  if (!/^\d{2}_[a-z0-9-]+\.(svg|png|jpg|jpeg|webp)$/.test(asset)) {
-    fail(`Asset name should use numeric prefix and underscore: ${asset}`);
+  if (!/\.(svg|png|jpe?g|webp)$/i.test(asset)) {
+    fail(`Unsupported image asset extension: ${asset}`);
   }
   const assetPath = path.join(assetsDir, asset);
   if (!fs.existsSync(assetPath)) {
     fail(`Missing referenced asset ${path.relative(root, assetPath)}`);
   }
+}
+
+for (const asset of ["01_personal-photo.JPG", "02_running-robot.jpg", "02_codex-keypad.jpg", "05_meme.png", "03_campervan.jpg", "04_book.jpg"]) {
+  if (!imageRefs.includes(asset)) fail(`deck/index.html should reference ${asset}`);
 }
 
 const remoteRefs = [

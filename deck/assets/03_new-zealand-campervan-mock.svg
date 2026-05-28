@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" role="img" aria-label="Campervan placeholder">
+  <rect width="640" height="420" fill="#effaf5"/>
+  <circle cx="500" cy="86" r="42" fill="#ffd76a"/>
+  <path d="M0 270c105-82 179-118 270-42 80 67 151 35 236-28 49-36 87-48 134-18v238H0z" fill="#dff3eb"/>
+  <path d="M72 254h420c34 0 62 28 62 62v46H72z" fill="#ffffff" stroke="#2961db" stroke-width="10"/>
+  <rect x="132" y="284" width="100" height="54" rx="8" fill="#2961db"/>
+  <rect x="264" y="284" width="128" height="54" rx="8" fill="#2961db"/>
+  <circle cx="180" cy="364" r="28" fill="#111827"/>
+  <circle cx="454" cy="364" r="28" fill="#111827"/>
+  <text x="320" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#2961db">New Zealand break</text>
+</svg>

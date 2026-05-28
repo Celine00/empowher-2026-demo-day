@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 300" role="img" aria-label="Stone robot placeholder">
-  <rect width="420" height="300" fill="#f7f9fd"/>
-  <rect x="116" y="78" width="188" height="158" rx="22" fill="#9aa4b2"/>
-  <rect x="152" y="116" width="116" height="50" rx="10" fill="#ffffff"/>
-  <circle cx="184" cy="141" r="7" fill="#5f6b7a"/>
-  <circle cx="236" cy="141" r="7" fill="#5f6b7a"/>
-  <path d="M134 82l42 42M274 86l-54 54M128 206l56-56M244 228l50-50" stroke="#707b89" stroke-width="9" opacity=".7"/>
-</svg>
