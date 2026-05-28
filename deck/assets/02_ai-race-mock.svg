@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" role="img" aria-label="AI race placeholder">
+  <rect width="900" height="560" fill="#f7f9fd"/>
+  <path d="M70 420h760" stroke="#dce4f2" stroke-width="10" stroke-linecap="round"/>
+  <g fill="none" stroke="#2961db" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M214 340l42-70 52 44"/>
+    <path d="M256 270l-46-42"/>
+    <path d="M308 314l-20 92"/>
+    <path d="M250 342l-72 56"/>
+  </g>
+  <rect x="148" y="182" width="100" height="64" rx="8" fill="#111827"/>
+  <circle cx="300" cy="184" r="32" fill="#2961db"/>
+  <g transform="translate(540 145)">
+    <rect x="0" y="45" width="180" height="180" rx="24" fill="#2961db"/>
+    <rect x="35" y="90" width="110" height="52" rx="12" fill="#ffffff"/>
+    <circle cx="70" cy="116" r="8" fill="#2961db"/>
+    <circle cx="112" cy="116" r="8" fill="#2961db"/>
+    <path d="M90 45V0" stroke="#2961db" stroke-width="10" stroke-linecap="round"/>
+    <circle cx="90" cy="-10" r="14" fill="#2961db"/>
+    <path d="M-34 105h34M180 105h42M48 225v66M132 225v66" stroke="#2961db" stroke-width="14" stroke-linecap="round"/>
+  </g>
+  <text x="450" y="74" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#111827">Efficiency race mock</text>
+</svg>
