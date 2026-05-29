@@ -93,14 +93,26 @@ if (imageRefs.length < 8) {
 }
 
 const slideHtml = [...html.matchAll(/<section\b[\s\S]*?<\/section>/g)].map((match) => match[0]);
-const expectedAssetPrefixesBySlide = ["", "01_", "02_", "03_", "04_", "05_", "06_", ""];
+const allowedAssetPatternsBySlide = [
+  [],
+  ["01_", "02_sunyat.png", "02_yale.png", "02_bytedance.jpg", "02_shopee.jpg"],
+  ["02_"],
+  ["03_"],
+  ["04_"],
+  ["05_"],
+  ["06_"],
+  [],
+];
 for (const [index, slide] of slideHtml.entries()) {
-  const expectedPrefix = expectedAssetPrefixesBySlide[index];
-  if (!expectedPrefix) continue;
+  const allowedPatterns = allowedAssetPatternsBySlide[index];
+  if (!allowedPatterns?.length) continue;
   const slideImageRefs = [...slide.matchAll(/src="assets\/([^"]+)"/g)].map((match) => match[1]);
   for (const asset of slideImageRefs) {
-    if (!asset.startsWith(expectedPrefix)) {
-      fail(`Slide ${index + 1} asset should start with ${expectedPrefix}: ${asset}`);
+    const isAllowed = allowedPatterns.some((pattern) =>
+      pattern.endsWith("_") ? asset.startsWith(pattern) : asset === pattern,
+    );
+    if (!isAllowed) {
+      fail(`Slide ${index + 1} asset is not allowed by slide asset rules: ${asset}`);
     }
   }
 }
