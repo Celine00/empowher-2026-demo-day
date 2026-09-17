@@ -14,10 +14,10 @@ This repo is ready to publish from the `main` branch root. After creating the Gi
 - Branch: `main`
 - Folder: `/ (root)`
 
-The published URL will be:
+The published deck is available at:
 
 ```text
-https://<owner>.github.io/<repo>/
+https://celine00.github.io/empowher-2026-demo-day/
 ```
 
 ## Validate
